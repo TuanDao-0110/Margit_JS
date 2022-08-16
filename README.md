@@ -1,4 +1,1 @@
-# Margit
-# Margit
-# Margit
-# Margit_JS
+# 1st lesson done with simple JS code.

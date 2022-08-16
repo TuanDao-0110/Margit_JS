@@ -1,4 +1,1 @@
-# Margit
-# Margit
-# Margit
-# Margit_JS
+# This is repositories where i store all my work with Margit.

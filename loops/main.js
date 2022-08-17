@@ -57,16 +57,93 @@ const asking25Num = () => {
   }
 };
 
-// Make a program that ask first one number from the user. After that the program asks: ”Do you want to continue giving numbers?(y/n)”. If user answers y, the program continues to ask another number. If user answers n, program ends. In the end program prints out average of the numbers.
+// Make a program that ask first one number from the user. After that the program asks:
+//  ”Do you want to continue giving numbers?(y/n)”. 
+// If user answers y, the program continues to ask another number. 
+// If user answers n, program ends. In the end program prints out average of the numbers.
 const askingAverageNumber = () => {
   let total = 0;
-  average;
-  let firstQuestion = prompt("please insert any number ");
-  let secondQuestino = prompt("Do you want to continue giving numbers?(y/n)");
+  let average;
+  let count = 0
+  let secondQuestion = true
+  while (secondQuestion) {
+    count++
+    let firstQuestion = prompt("please insert any number ");
+    total += parseInt(firstQuestion)
+    average = total / count
+
+    secondQuestion = confirm('Do you want to continue giving numbers? ?')
+    if (!secondQuestion) return alert('Average Number is : ' + average)
+  }
 };
 
-// Make a program that asks first how many numbers user wants to give to the program. After that program asks those numbers. In the end program prints out the smallest number that user gave.
+
+
+// Make a program that asks first how many numbers user wants to give to the program.
+//  After that program asks those numbers. In the end program prints out the smallest number that user gave.
+const askingSmallestNum = () => {
+  let smallestNum = 0
+  let amountNumber = prompt('how many number do you want to give the program')
+  !amountNumber || amountNumber == 0 ? alert('Programme finished') : ''
+
+  for (i = 1; i <= amountNumber; i++) {
+    let tempNum = prompt('please input ' + i)
+
+    if (i == 1) {
+      console.log('incase i = 1 :' + i)
+      smallestNum = tempNum
+    }
+    else {
+      if (smallestNum > tempNum) {
+        console.log('in case i != 0 : ' + i)
+        smallestNum = tempNum
+      }
+      if (i == amountNumber) {
+        console.log(i)
+        console.log('smallest number is : ' + smallestNum)
+      }
+    }
+
+  }
+}
 
 // Make a program that asks ten numbers and in the end prints out two biggest numbers.
+const twoBiggestNum = () => {
+  let firstNum = 0;
+  let secondNum = 0;
+  for (i = 1; i <= 10; i++) {
+    let insertNum = prompt('please insert ' + i + ' number')
+    if (i == 1) {
+      firstNum = insertNum
+    }
+    if (i == 2) {
+      if (insertNum > firstNum) {
+        let tempNum = firstNum
+        firstNum = insertNum
+        secondNum = tempNum
+      } else {
+        secondNum = insertNum
+      }
 
-// Make a program that asks ten numbers. Program calculates and prints out sum and average, also prints out the smallest and biggest number.
+    }
+    else {
+      if (insertNum > secondNum && insertNum < firstNum) {
+        secondNum = insertNum
+      }
+      if (insertNum > secondNum && insertNum > firstNum) {
+        let tempNum = firstNum
+        firstNum = insertNum;
+        secondNum = tempNum
+      }
+      if (i == 10) {
+        alert('final 2 biggest number is : ' + firstNum + " vs " + secondNum)
+      }
+    }
+  }
+}
+
+
+
+// Make a program that asks ten numbers. 
+// Program calculates and prints out sum and average, also prints out the smallest and biggest number.
+const 

@@ -1,18 +1,23 @@
+* {
+  margin: 0.5rem;
+}
 .card-holder {
-    width: 100vw;
-    min-height: 100vh;
-display: flex;
-justify-content: center;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
 }
 .card {
-    text-align: center;
-
+  /* text-align: center; */
 }
 
-h1{
-    font-size: 72px;
-  background: -webkit-linear-gradient(#eee, #333,blue);
+h1 {
+  font-size: 72px;
+  background: -webkit-linear-gradient(#eee, #333, blue);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
 
+label {
+  text-align: left;
 }

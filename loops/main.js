@@ -146,4 +146,34 @@ const twoBiggestNum = () => {
 
 // Make a program that asks ten numbers. 
 // Program calculates and prints out sum and average, also prints out the smallest and biggest number.
-const 
+const finalTask = () => {
+  let total = 0
+  let average
+  let smallestNum = 0
+  let biggestNum = 0
+  for (i = 1; i <= 10; i++) {
+    let insertNum = prompt('please insert number : ' + i)
+    total += parseInt(insertNum)
+    if (i == 1) {
+      smallestNum = insertNum
+      biggestNum = insertNum
+    } else {
+      if (insertNum > biggestNum) {
+        biggestNum = insertNum
+      }
+
+      if (insertNum < smallestNum) {
+        console.log('put smallest number')
+        smallestNum = insertNum
+      }
+      if (i == 10) {
+
+        average = total / 10
+        alert('Total is : ' + total + ' Average is : ' + average + ' Smallest Number is : ' + smallestNum + ' Biggest Number is : ' + biggestNum)
+      }
+    }
+  }
+}
+
+
+finalTask()

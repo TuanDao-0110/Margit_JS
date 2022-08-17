@@ -1,32 +1,61 @@
+// Make a program that asks for three numbers from the user. The program prints out the sum of the numbers if any of the numbers are positive. If all the numbers are positive, also print out multiplication. If all numbers are negative, the text “only negatives” is printed. Handle zero as positive in this assignment.
+
 //1. create  a form to ask user to input the age value
-let submitForm = document.getElementById("age_form");
+let submitForm = document.getElementById("random_form");
 // 2. submit the age value to the systerm
 submitForm.addEventListener("submit", (e) => {
-  let age;
+  let threeNumber = [(firstNumber = 0), (secondNumber = 0), (lastNumber = 0)];
+  let numberPosNumber;
+  let result = document.getElementById("result");
   // 2.1 prevent the page reload againt
   e.preventDefault();
 
-  age = document.getElementById("input_age").value;
-  // 2.1 check that user insert value or not ?
-  age ? checkValue(age) : alert("please insert your age");
+  numberArr = document.getElementsByClassName("number");
+
+  for (let i = 0; i < numberArr.length; i++) {
+    numberArr[i].value
+      ? (threeNumber[i] = numberArr[i].value)
+      : alert("please input value of " + (i + 1) + " number");
+  }
+  numberPosNumber = checkValue(threeNumber);
+  if (numberPosNumber === 3)
+    return (result.innerHTML = valueAllPosNumber(threeNumber));
+  if (numberPosNumber < 3 && numberPosNumber > 0)
+    return (result.innerHTML = valueOnePosNumber(threeNumber));
+  if (numberPosNumber === 0) return (result.innerHTML = valueAllNevNumber());
 });
 //3. check the value
-const checkValue = (age) => {
-  switch (true) {
-    case age < 18:
-      console.log("too young");
-      break;
-    case age < 27:
-      console.log("Right age for military service ");
-      break;
-    case age < 41:
-      console.log("You are in Reserve");
-      break;
-    case age < 55:
-      console.log("You are in backup Reserve");
-      break;
-    default:
-      console.log("too aged");
-      break;
-  }
+const checkValue = (threeNumber) => {
+  let numberPosNumber = 0;
+
+  threeNumber.map((number, index) => {
+    number > 0 ? numberPosNumber++ : "";
+  });
+
+  return numberPosNumber;
+};
+
+// 3.1 function if all number is possitive
+
+const valueAllPosNumber = (threeNumber) => {
+  let result = 1;
+  threeNumber.map((number, index) => {
+    result *= number;
+  });
+  return result;
+};
+
+// 3.2 function if all number is negative
+
+const valueAllNevNumber = () => {
+  return "only Negative";
+};
+
+// 3.3  function if one number is possitive
+const valueOnePosNumber = (threeNumber) => {
+  let result = 0;
+  threeNumber.map((number, index) => {
+    result += parseInt(number, 10);
+  });
+  return result;
 };

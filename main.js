@@ -4,7 +4,7 @@
 let submitForm = document.getElementById("random_form");
 // 2. submit the age value to the systerm
 submitForm.addEventListener("submit", (e) => {
-  let threeNumber = [(firstNumber = 0), (secondNumber = 0), (lastNumber = 0)];
+  let threeNumber = [0, 0, 0];
   let numberPosNumber;
   let result = document.getElementById("result");
   // 2.1 prevent the page reload againt

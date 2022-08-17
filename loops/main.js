@@ -20,33 +20,50 @@ const asking20Num = () => {
   let result = 0;
   for (i = 1; i <= 20; i++) {
     let num = prompt("please insert your number");
-    result += parseInt(num);
+    num % 2 == 0 ? result++ : "";
 
-    i == 20 ? console.log("final sum result is :" + result) : "";
+    i == 20 ? console.log("final even number is :" + result) : "";
   }
 };
 
 // Make a program that asks numbers from the user, until user gives 0 and then program ends. In the end program prints out average of the numbers.
 const averageCalculator = () => {
   let total = 0;
-  let average = 0;
+  let average;
   for (i = 1; ; i++) {
     let num = prompt("please insert your number");
     if (num != 0) {
       total += parseInt(num);
-      console.log(total);
       average = total / i;
     } else {
-      alert("Average is : " + average``);
+      i > 1
+        ? alert("Average is : " + average)
+        : alert("you did not input any new number");
       break;
     }
   }
 };
-averageCalculator();
 
 // Make a program that asks 25 numbers form the user. In the end program prints out average of the numbers.
 
+const asking25Num = () => {
+  let total = 0;
+  let average;
+  for (i = 1; i <= 25; i++) {
+    let num = prompt("please insert your number");
+    total += parseInt(num);
+    average = total / i;
+    i == 20 ? console.log("final average is :" + average) : "";
+  }
+};
+
 // Make a program that ask first one number from the user. After that the program asks: ”Do you want to continue giving numbers?(y/n)”. If user answers y, the program continues to ask another number. If user answers n, program ends. In the end program prints out average of the numbers.
+const askingAverageNumber = () => {
+  let total = 0;
+  average;
+  let firstQuestion = prompt("please insert any number ");
+  let secondQuestino = prompt("Do you want to continue giving numbers?(y/n)");
+};
 
 // Make a program that asks first how many numbers user wants to give to the program. After that program asks those numbers. In the end program prints out the smallest number that user gave.
 

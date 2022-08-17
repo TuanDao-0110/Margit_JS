@@ -17,14 +17,12 @@ const calulateSalary = (h, salary) => {
   let wave = 0;
   switch (true) {
     case h <= 7:
-      console.log("run");
       wave = h * salary;
       break;
     case h > 7 && h <= 9:
       wave = 7 * salary + (h - 7) * salary * 1.5;
       break;
     default:
-      console.log("done");
       wave = 7 * salary + 2 * salary * 1.5 + (h - 9) * 2 * salary;
       break;
   }

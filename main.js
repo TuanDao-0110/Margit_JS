@@ -24,7 +24,7 @@ submitForm.addEventListener("submit", (e) => {
     return (result.innerHTML = valueOnePosNumber(threeNumber));
   if (numberPosNumber === 0) return (result.innerHTML = valueAllNevNumber());
 });
-//3. check the value
+//3. check how many possitive number on that.
 const checkValue = (threeNumber) => {
   let numberPosNumber = 0;
 

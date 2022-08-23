@@ -100,7 +100,7 @@ const askingAverageNumber = () => {
     total += parseInt(firstQuestion);
     average = total / count;
 
-    secondQuestion = confirm("Do you want to continue giving numbers? ?");
+    secondQuestion = confirm("Do you want to continue giving numbers ?");
     if (!secondQuestion) return alert("Average Number is : " + average);
   }
 };

@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 60%;
+  margin: auto;
+}
+h2 {
+  margin-bottom: 1rem;
+}
+.cal {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+.cal input {
+  border-radius: 5px;
+  border: 1px solid blue;
+}
+button {
+  cursor: pointer;
+  animation-duration: 1s;
+  border: 1px solid;
+  margin-top: 1rem;
+  border-radius: 30px;
+  font-size: 10px;
+}
+
+button:hover {
+  border: 1px solid red;
+}

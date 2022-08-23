@@ -1,21 +1,43 @@
 // Loop Assignments (Don’t use arrays)
 
-// Make a program that prints all positive numbers that are odd and smaller than 100 starting from 1. (1 3 5 7 9 11…)
+//1. Make a program that prints all positive numbers that are odd and smaller than 100 starting from 1. (1 3 5 7 9 11…)
 const positiveOddNum = () => {
   for (let i = 0; i < 100; i++) {
     i % 2 != 0 ? console.log(i) : "";
   }
 };
-// Make a program that prints all positive numbers that are smaller than 100 and even, in this order: 2 98 4 96 6 94 … Print result in one line.
+// 2. Make a program that prints all positive numbers that are smaller than 100 and even, in this order: 2 98 4 96 6 94 … Print result in one line.
+
 const positiveEvenNum = () => {
-  for (let i = 0; i < 100; i++) {
-    i % 2 == 0 ? console.log(i) : "";
+  let result = 0;
+  end = 0;
+  for (let i = 0; i < 100; i + 2) {
+    //    i % 2 == 0 && i != 0 ? console.log(i) : "";
+    result = "";
   }
 };
-
-// Make a program that asks repeatedly from the user the distance (km) and time (h) and calculates average speed. The program ends when user gives 0 for the distance. (After getting 0, the program does not ask anything from the user.)
-
-// Make a program that asks 20 numbers from user. After that the program prints out how many of those numbers where even.
+positiveEvenNum();
+//3. Make a program that asks repeatedly from the user the distance (km) and time (h) and calculates average speed. The program ends when user gives 0 for the distance. (After getting 0, the program does not ask anything from the user.)
+const askingSpeedAverage = () => {
+  let average;
+  let distance = 0;
+  let time = 0;
+  let flag = true;
+  do {
+    distanceTemp = prompt("what distance you are");
+    if (distanceTemp != 0) {
+      timeTemp = prompt("how much time you travel");
+      distance += parseInt(distanceTemp);
+      time += parseInt(timeTemp);
+      average = distance / time;
+    }
+    if (distanceTemp == 0) {
+      flag = false;
+      return console.log("average:  " + average.toFixed(2) + " km/h");
+    }
+  } while (flag);
+};
+//4. Make a program that asks 20 numbers from user. After that the program prints out how many of those numbers where even.
 const asking20Num = () => {
   let result = 0;
   for (i = 1; i <= 20; i++) {
@@ -26,7 +48,7 @@ const asking20Num = () => {
   }
 };
 
-// Make a program that asks numbers from the user, until user gives 0 and then program ends. In the end program prints out average of the numbers.
+// 5.Make a program that asks numbers from the user, until user gives 0 and then program ends. In the end program prints out average of the numbers.
 const averageCalculator = () => {
   let total = 0;
   let average;
@@ -44,7 +66,7 @@ const averageCalculator = () => {
   }
 };
 
-// Make a program that asks 25 numbers form the user. In the end program prints out average of the numbers.
+// 6.Make a program that asks 25 numbers form the user. In the end program prints out average of the numbers.
 
 const asking25Num = () => {
   let total = 0;
@@ -57,123 +79,120 @@ const asking25Num = () => {
   }
 };
 
-// Make a program that ask first one number from the user. After that the program asks:
-//  ”Do you want to continue giving numbers?(y/n)”. 
-// If user answers y, the program continues to ask another number. 
+// 7.Make a program that ask first one number from the user. After that the program asks:
+//  ”Do you want to continue giving numbers?(y/n)”.
+// If user answers y, the program continues to ask another number.
 // If user answers n, program ends. In the end program prints out average of the numbers.
 const askingAverageNumber = () => {
   let total = 0;
   let average;
-  let count = 0
-  let secondQuestion = true
+  let count = 0;
+  let secondQuestion = true;
   while (secondQuestion) {
-    count++
+    count++;
     let firstQuestion = prompt("please insert any number ");
-    total += parseInt(firstQuestion)
-    average = total / count
+    total += parseInt(firstQuestion);
+    average = total / count;
 
-    secondQuestion = confirm('Do you want to continue giving numbers? ?')
-    if (!secondQuestion) return alert('Average Number is : ' + average)
+    secondQuestion = confirm("Do you want to continue giving numbers? ?");
+    if (!secondQuestion) return alert("Average Number is : " + average);
   }
 };
 
-
-
-// Make a program that asks first how many numbers user wants to give to the program.
+// 8.Make a program that asks first how many numbers user wants to give to the program.
 //  After that program asks those numbers. In the end program prints out the smallest number that user gave.
 const askingSmallestNum = () => {
-  let smallestNum = 0
-  let amountNumber = prompt('how many number do you want to give the program')
-  !amountNumber || amountNumber == 0 ? alert('Programme finished') : ''
+  let smallestNum = 0;
+  let amountNumber = prompt("how many number do you want to give the program");
+  !amountNumber || amountNumber == 0 ? alert("Programme finished") : "";
 
   for (i = 1; i <= amountNumber; i++) {
-    let tempNum = prompt('please input ' + i)
+    let tempNum = prompt("please input " + i);
 
     if (i == 1) {
-      console.log('incase i = 1 :' + i)
-      smallestNum = tempNum
-    }
-    else {
+      console.log("incase i = 1 :" + i);
+      smallestNum = tempNum;
+    } else {
       if (smallestNum > tempNum) {
-        console.log('in case i != 0 : ' + i)
-        smallestNum = tempNum
+        console.log("in case i != 0 : " + i);
+        smallestNum = tempNum;
       }
       if (i == amountNumber) {
-        console.log(i)
-        console.log('smallest number is : ' + smallestNum)
+        console.log(i);
+        console.log("smallest number is : " + smallestNum);
       }
     }
-
   }
-}
+};
 
-// Make a program that asks ten numbers and in the end prints out two biggest numbers.
+// 9.Make a program that asks ten numbers and in the end prints out two biggest numbers.
 const twoBiggestNum = () => {
   let firstNum = 0;
   let secondNum = 0;
   for (i = 1; i <= 10; i++) {
-    let insertNum = prompt('please insert ' + i + ' number')
+    let insertNum = prompt("please insert " + i + " number");
     if (i == 1) {
-      firstNum = insertNum
+      firstNum = insertNum;
     }
     if (i == 2) {
       if (insertNum > firstNum) {
-        let tempNum = firstNum
-        firstNum = insertNum
-        secondNum = tempNum
+        let tempNum = firstNum;
+        firstNum = insertNum;
+        secondNum = tempNum;
       } else {
-        secondNum = insertNum
+        secondNum = insertNum;
       }
-
-    }
-    else {
+    } else {
       if (insertNum > secondNum && insertNum < firstNum) {
-        secondNum = insertNum
+        secondNum = insertNum;
       }
       if (insertNum > secondNum && insertNum > firstNum) {
-        let tempNum = firstNum
+        let tempNum = firstNum;
         firstNum = insertNum;
-        secondNum = tempNum
+        secondNum = tempNum;
       }
       if (i == 10) {
-        alert('final 2 biggest number is : ' + firstNum + " vs " + secondNum)
+        alert("final 2 biggest number is : " + firstNum + " vs " + secondNum);
       }
     }
   }
-}
+};
 
-
-
-// Make a program that asks ten numbers. 
+//10. Make a program that asks ten numbers.
 // Program calculates and prints out sum and average, also prints out the smallest and biggest number.
 const finalTask = () => {
-  let total = 0
-  let average
-  let smallestNum = 0
-  let biggestNum = 0
+  let total = 0;
+  let average;
+  let smallestNum = 0;
+  let biggestNum = 0;
   for (i = 1; i <= 10; i++) {
-    let insertNum = prompt('please insert number : ' + i)
-    total += parseInt(insertNum)
+    let insertNum = prompt("please insert number : " + i);
+    total += parseInt(insertNum);
     if (i == 1) {
-      smallestNum = insertNum
-      biggestNum = insertNum
+      smallestNum = insertNum;
+      biggestNum = insertNum;
     } else {
       if (insertNum > biggestNum) {
-        biggestNum = insertNum
+        biggestNum = insertNum;
       }
 
       if (insertNum < smallestNum) {
-        console.log('put smallest number')
-        smallestNum = insertNum
+        console.log("put smallest number");
+        smallestNum = insertNum;
       }
       if (i == 10) {
-
-        average = total / 10
-        alert('Total is : ' + total + ' Average is : ' + average + ' Smallest Number is : ' + smallestNum + ' Biggest Number is : ' + biggestNum)
+        average = total / 10;
+        alert(
+          "Total is : " +
+            total +
+            " Average is : " +
+            average +
+            " Smallest Number is : " +
+            smallestNum +
+            " Biggest Number is : " +
+            biggestNum
+        );
       }
     }
   }
-}
-
-
-finalTask()
+};

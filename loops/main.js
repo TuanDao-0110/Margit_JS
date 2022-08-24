@@ -47,6 +47,7 @@ const askingSpeedAverage = () => {
 //4. Make a program that asks 20 numbers from user. After that the program prints out how many of those numbers where even.
 const asking20Num = () => {
   let result = 0;
+  
   for (i = 1; i <= 20; i++) {
     let num = prompt("please insert your number");
     num % 2 == 0 && result++;

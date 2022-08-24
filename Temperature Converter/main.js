@@ -1,9 +1,9 @@
-let cel = document.getElementById('cel')
+let cel = (document.getElementById('cel'))
 let fah = document.getElementById('fah')
 let kel = document.getElementById('kel')
 const convertFromCel = () => {
-    fah.value = Math.floor(cel.value / 2)
-    kel.value = Math.floor(cel.value / 3)
+    fah.value = (parseFloat(cel.value ) *2 + 32).toFixed(2)
+    kel.value = (parseFloat(cel.value )+273.15).toFixed(2)
 }
 
 

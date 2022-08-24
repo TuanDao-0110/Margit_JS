@@ -6,9 +6,12 @@
 
 body {
     height: 100vh;
+    background-image: radial-gradient(blue, whitesmoke);
 }
 
 .container {
+    opacity: 0.9;
+    border-radius: 50px;
     text-align: center;
     height: 100%;
     gap: 2rem;
@@ -20,6 +23,18 @@ body {
 }
 .conveter {
     display: grid;
-    grid-template-columns: repeat(1, 1fr 4fr);
+    grid-template-columns: repeat(1, 1fr 4fr 1fr);
     gap: 1rem;
+    background-color: antiquewhite;
+    padding: 5rem;
+}
+
+label {
+    font-size: 30px;
+}
+
+input {
+    border: 2px solid whitesmoke;
+    border-radius: 2px;
+    font-size: 30px;
 }

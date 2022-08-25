@@ -1,15 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
 
     <title>Document</title>
-</head>
-<body>
-    <input type="text"  name="" id="">
+  </head>
+  <body>
+    <h1>order pizza</h1>
+    <div class="container">
+      <fomr action="" class="main">
+        <form class="pizza_size">
+          <h2>pizza size</h2>
+          <label for="size_2">for 2 people</label>
+          <input type="radio" name="size" id="size_1" />
+          <label for="size_4 ">for 4 people</label>
+          <input type="radio" name="size" id="size_4" />
+          <label for="size_6">for 6 people</label>
+          <input type="radio" name="size" id="size_6" />
+          <label for="size_8 ">for 8 people</label>
+          <input type="radio" name="size" id="size_8" />
+        </form>
+        <form id="topping" class="topping">
+          <h2>choose your topping</h2>
+          <label for="topping_1"> <img src="https://api.lorem.space/image/pizza?w=150&h=150" alt="" /></label>
+          <input type="checkbox" name="topping_1" id="topping_1" class="topping" />
+          <label for="topping_2"> <img src="https://api.lorem.space/image/pizza?w=150&h=150" alt="" /></label>
+          <input type="checkbox" name="topping_2" id="topping_2" class="topping" />
+          <label for="topping_3"> <img src="https://api.lorem.space/image/pizza?w=150&h=150" alt="" /></label>
+          <input type="checkbox" name="topping_3" id="topping_3" class="topping" />
+          <label for="topping_4"> <img src="https://api.lorem.space/image/pizza?w=150&h=150" alt="" /></label>
+          <input type="checkbox" name="topping_4" id="topping_4" class="topping" />
+          <label for="topping_5"> <img src="https://api.lorem.space/image/pizza?w=150&h=150" alt="" /></label>
+          <input type="checkbox" name="topping_5" id="topping_5" class="topping" />
+          <label for="topping_6"> <img src="https://api.lorem.space/image/pizza?w=150&h=150" alt="" /></label>
+          <input type="checkbox" name="topping_6" id="topping_6" class="topping" />
+          <label for="topping_7"> <img src="https://api.lorem.space/image/pizza?w=150&h=150" alt="" /></label>
+          <input type="checkbox" name="topping_7" id="topping_7" class="topping" />
+          <label for="topping_8"> <img src="https://api.lorem.space/image/pizza?w=150&h=150" alt="" /></label>
+          <input type="checkbox" name="topping_8" id="topping_8" class="topping" />
+          <label for="topping_9"> <img src="https://api.lorem.space/image/pizza?w=150&h=150" alt="" /></label>
+          <input type="checkbox" name="topping_9" id="topping_9" class="topping" />
+          <label for="topping_10"> <img src="https://api.lorem.space/image/pizza?w=150&h=150" alt="" /></label>
+          <input type="checkbox" name="topping_10" id="topping_10" class="topping" />
+        </form>
+        <form class="delivery">
+          <h2>delivery method</h2>
+          <label for="method"></label>
+          <select name="delivery" id="delivery">
+            <option value="1">Home</option>
+            <option value="2">pick food</option>
+            <option value="3">eat here</option>
+          </select>
+        </form>
+        <div class="btn">
+
+            <button class="submit" id="submit">Submit</button>
+        </div>
+      </fomr>
+    </div>
     <script src="./main.js"></script>
-</body>
+  </body>
 </html>

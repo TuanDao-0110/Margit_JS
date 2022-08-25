@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;0,700;1,400;1,500;1,700;1,900&display=swap");
+body {
+    height: 100vh;
+    background-image: radial-gradient(whitesmoke, rgb(143, 118, 144));
+}
+input {
+    cursor: pointer;
+}
+/*  */
+h1 {
+    background: rgb(136, 114, 114);
+    position: sticky;
+    top: 0px;
+    text-align: center;
+    color: blanchedalmond;
+    margin-bottom: 25px;
+}
+.container {
+    width: 80%;
+    margin: auto;
+
+    /* From https://css.glass */
+    /* From https://css.glass */
+    background: rgba(123, 13, 13, 0.36);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.4px);
+    -webkit-backdrop-filter: blur(7.4px);
+    border: 1px solid rgba(123, 13, 13, 0.46);
+}
+h2 {
+    text-align: center;
+    margin: 25px auto;
+    color: #333f;
+}
+.container .main {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    gap: 10px;
+    margin: auto;
+    width: 80%;
+align-items: center;
+}
+
+.container  .pizza_size {
+    /* display: grid; */
+  flex-grow: 2;
+   
+}
+.pizza_size h2 { 
+    width: 100%;
+}
+
+.container  .topping {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr 1fr);
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+}
+
+.container  .topping h2 {
+    grid-column: 1/7;
+}
+
+.container form .topping label {
+    /* grid-column: 50%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container  .topping label img {
+    border-radius: 100%;
+    width: 100%;
+    margin: auto;
+    align-content: center;
+}
+.container  .topping input {
+}
+
+/*  delivery method  */
+.delivery {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+}
+
+.delivery #delivery {
+    width: 300px;
+    font-size: 2rem;
+    text-align: center;
+    border: 3px solid rebeccapurple;
+    padding: 5px;
+    margin: auto;
+}
+
+/* button submit  */
+.btn { 
+    display: flex;
+    margin:50px auto;
+}
+.submit {
+    margin: auto;
+    font-size: 25px;
+    font-weight: 300;
+    padding: 20px;
+    background-color: rgb(66, 215, 215);
+    color: antiquewhite;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 500ms;
+
+}
+
+.submit:hover {
+    background-color: rgb(92, 71, 44);
+}

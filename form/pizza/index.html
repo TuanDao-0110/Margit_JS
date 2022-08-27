@@ -11,17 +11,17 @@
   <body>
     <h1>order pizza</h1>
     <div class="container">
-      <fomr action="" class="main">
-        <form class="pizza_size">
+      <div action="" class="main">
+        <form class="pizza_size" id="pizza_size">
           <h2>pizza size</h2>
           <label for="size_2">for 2 people</label>
-          <input type="radio" name="size" id="size_1" />
+          <input type="radio" name="size" id="size_2" value="size2" />
           <label for="size_4 ">for 4 people</label>
-          <input type="radio" name="size" id="size_4" />
+          <input type="radio" name="size" id="size_4" value="size4" />
           <label for="size_6">for 6 people</label>
-          <input type="radio" name="size" id="size_6" />
+          <input type="radio" name="size" id="size_6" value="size6" />
           <label for="size_8 ">for 8 people</label>
-          <input type="radio" name="size" id="size_8" />
+          <input type="radio" name="size" id="size_8" value="size8" />
         </form>
         <form id="topping" class="topping">
           <h2>choose your topping</h2>
@@ -46,20 +46,20 @@
           <label for="topping_10"> <img src="https://api.lorem.space/image/pizza?w=150&h=150" alt="" /></label>
           <input type="checkbox" name="topping_10" id="topping_10" class="topping" />
         </form>
-        <form class="delivery">
+        <form class="delivery" id="delivery">
           <h2>delivery method</h2>
           <label for="method"></label>
-          <select name="delivery" id="delivery">
-            <option value="1">Home</option>
-            <option value="2">pick food</option>
-            <option value="3">eat here</option>
+          <select name="delivery" id="deli">
+            <option value="home">Home</option>
+            <option value="pick">pick food</option>
+            <option value="here">eat here</option>
           </select>
         </form>
         <div class="btn">
-
-            <button class="submit" id="submit">Submit</button>
+          <button class="submit" id="submit">Submit</button>
         </div>
-      </fomr>
+        <div>Your Bills : <span id="bill"></span> </div>
+      </div>
     </div>
     <script src="./main.js"></script>
   </body>

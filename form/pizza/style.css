@@ -7,7 +7,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;0,700;1,400;1,500;1,700;1,900&display=swap");
 body {
     height: 100vh;
-    background-image: radial-gradient(whitesmoke, rgb(143, 118, 144));
+    background-image: url("https://api.lorem.space/image/burger?w=1500&h=2000");
+    background-size: cover;
+    color: rgb(183, 197, 210);
 }
 input {
     cursor: pointer;
@@ -21,52 +23,74 @@ h1 {
     color: blanchedalmond;
     margin-bottom: 25px;
 }
+/* container  */
 .container {
     width: 80%;
     margin: auto;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
     /* From https://css.glass */
     /* From https://css.glass */
-    background: rgba(123, 13, 13, 0.36);
+    background: rgba(123, 13, 13, 0.26);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(7.4px);
     -webkit-backdrop-filter: blur(7.4px);
     border: 1px solid rgba(123, 13, 13, 0.46);
 }
+
 h2 {
     text-align: center;
     margin: 25px auto;
-    color: #333f;
+    color: rgb(220, 214, 235);
 }
+/* main */
 .container .main {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     gap: 10px;
-    margin: auto;
-    width: 80%;
-align-items: center;
+    /* margin: auto; */
+    /* width: 80%; */
+    align-items: center;
 }
 
-.container  .pizza_size {
-    /* display: grid; */
-  flex-grow: 2;
-   
-}
-.pizza_size h2 { 
-    width: 100%;
-}
-
-.container  .topping {
+/* pizza size */
+.container .pizza_size {
     display: grid;
     grid-template-columns: repeat(3, 1fr 1fr);
     gap: 10px;
     align-items: center;
-    padding: 10px;
+    /* padding: 10px; */
 }
 
-.container  .topping h2 {
+.pizza_size h2 {
+    /* width: 100%; */
+    grid-column: 1/7;
+}
+
+input {
+    /* width: 50px; */
+    height: 30px;
+    display: flex;
+    align-items: center;
+    /* justify-content: flex-end; */
+}
+label {
+    text-align: center;
+}
+/* topping */
+.container .topping {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr 1fr);
+    gap: 10px;
+    align-items: center;
+    /* padding: 10px; */
+}
+
+.container .topping h2 {
     grid-column: 1/7;
 }
 
@@ -76,13 +100,13 @@ align-items: center;
     align-items: center;
     justify-content: center;
 }
-.container  .topping label img {
+.container .topping label img {
     border-radius: 100%;
     width: 100%;
     margin: auto;
     align-content: center;
 }
-.container  .topping input {
+.container .topping input {
 }
 
 /*  delivery method  */
@@ -93,19 +117,19 @@ align-items: center;
     margin: auto;
 }
 
-.delivery #delivery {
+.delivery #deli {
     width: 300px;
     font-size: 2rem;
     text-align: center;
     border: 3px solid rebeccapurple;
-    padding: 5px;
+    /* padding: 5px; */
     margin: auto;
 }
 
 /* button submit  */
-.btn { 
+.btn {
     display: flex;
-    margin:50px auto;
+    margin: 50px auto;
 }
 .submit {
     margin: auto;
@@ -118,9 +142,14 @@ align-items: center;
     border-radius: 10px;
     cursor: pointer;
     transition: all 500ms;
-
 }
 
 .submit:hover {
     background-color: rgb(92, 71, 44);
+}
+
+#bill {
+    font-size: 50px;
+    color: aliceblue;
+    font-weight: 200;
 }

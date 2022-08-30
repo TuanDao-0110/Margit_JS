@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="./style.css" />
 
     <title>Document</title>
@@ -14,38 +21,40 @@
       <div action="" class="main">
         <form class="pizza_size" id="pizza_size">
           <h2>pizza size</h2>
-          <label for="size_2">for 2 people</label>
+
           <input type="radio" name="size" id="size_2" value="size2" />
-          <label for="size_4 ">for 4 people</label>
-          <input type="radio" name="size" id="size_4" value="size4" />
-          <label for="size_6">for 6 people</label>
+          <label for="size_2"> <i class="fa fa-user-alt"></i> x 2 </label><br />
+          <input type="radio" name="size" id="html" value="size4" />
+          <label for="html"> <i class="fa fa-user-alt"></i> x 4 </label><br />
           <input type="radio" name="size" id="size_6" value="size6" />
-          <label for="size_8 ">for 8 people</label>
+          <label for="size_6"> <i class="fa fa-user-alt"></i> x 6 </label><br />
           <input type="radio" name="size" id="size_8" value="size8" />
+          <label for="size_8"> <i class="fa fa-user-alt"></i> x 8 </label>
         </form>
         <form id="topping" class="topping">
           <h2>choose your topping</h2>
-          <label for="topping_1"> <img src="https://api.lorem.space/image/pizza?w=150&h=150" alt="" /></label>
           <input type="checkbox" name="topping_1" id="topping_1" class="topping" />
-          <label for="topping_2"> <img src="https://api.lorem.space/image/pizza?w=150&h=150" alt="" /></label>
+          <label for="topping_1"> <img src="https://api.lorem.space/image/pizza?w=150&h=150" alt="" /></label>
           <input type="checkbox" name="topping_2" id="topping_2" class="topping" />
-          <label for="topping_3"> <img src="https://api.lorem.space/image/pizza?w=150&h=150" alt="" /></label>
+          <label for="topping_2"> <img src="https://api.lorem.space/image/pizza?w=150&h=150" alt="" /></label>
           <input type="checkbox" name="topping_3" id="topping_3" class="topping" />
-          <label for="topping_4"> <img src="https://api.lorem.space/image/pizza?w=150&h=150" alt="" /></label>
+          <label for="topping_3"> <img src="https://api.lorem.space/image/pizza?w=150&h=150" alt="" /></label>
           <input type="checkbox" name="topping_4" id="topping_4" class="topping" />
-          <label for="topping_5"> <img src="https://api.lorem.space/image/pizza?w=150&h=150" alt="" /></label>
+          <label for="topping_4"> <img src="https://api.lorem.space/image/pizza?w=150&h=150" alt="" /></label>
           <input type="checkbox" name="topping_5" id="topping_5" class="topping" />
-          <label for="topping_6"> <img src="https://api.lorem.space/image/pizza?w=150&h=150" alt="" /></label>
+          <label for="topping_5"> <img src="https://api.lorem.space/image/pizza?w=150&h=150" alt="" /></label>
           <input type="checkbox" name="topping_6" id="topping_6" class="topping" />
-          <label for="topping_7"> <img src="https://api.lorem.space/image/pizza?w=150&h=150" alt="" /></label>
+          <label for="topping_6"> <img src="https://api.lorem.space/image/pizza?w=150&h=150" alt="" /></label>
           <input type="checkbox" name="topping_7" id="topping_7" class="topping" />
-          <label for="topping_8"> <img src="https://api.lorem.space/image/pizza?w=150&h=150" alt="" /></label>
+          <label for="topping_7"> <img src="https://api.lorem.space/image/pizza?w=150&h=150" alt="" /></label>
           <input type="checkbox" name="topping_8" id="topping_8" class="topping" />
-          <label for="topping_9"> <img src="https://api.lorem.space/image/pizza?w=150&h=150" alt="" /></label>
+          <label for="topping_8"> <img src="https://api.lorem.space/image/pizza?w=150&h=150" alt="" /></label>
           <input type="checkbox" name="topping_9" id="topping_9" class="topping" />
-          <label for="topping_10"> <img src="https://api.lorem.space/image/pizza?w=150&h=150" alt="" /></label>
+          <label for="topping_9"> <img src="https://api.lorem.space/image/pizza?w=150&h=150" alt="" /></label>
           <input type="checkbox" name="topping_10" id="topping_10" class="topping" />
+          <label for="topping_10"> <img src="https://api.lorem.space/image/pizza?w=150&h=150" alt="" /></label>
         </form>
+
         <form class="delivery" id="delivery">
           <h2>delivery method</h2>
           <label for="method"></label>
@@ -58,7 +67,7 @@
         <div class="btn">
           <button class="submit" id="submit">Submit</button>
         </div>
-        <div>Your Bills : <span id="bill"></span> </div>
+        <div>Your Bills : <span id="bill"></span></div>
       </div>
     </div>
     <script src="./main.js"></script>

@@ -22,15 +22,13 @@ label {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* gap: 2rem; */
-    /* height: 100vh; */
-    /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.11);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+  /* From https://css.glass */
+background: rgba(103, 206, 234, 0.57);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(12.3px);
+-webkit-backdrop-filter: blur(12.3px);
+border: 1px solid rgba(103, 206, 234, 0.61);
 }
 #myInsurance .info {
     display: flex;
@@ -62,7 +60,7 @@ img {
     cursor: pointer;
     transition: all 500ms;
     position: relative;
-    color: rgb(76, 224, 224);
+    color: rgb(24, 81, 81);
 }
 
 label:hover::after {

@@ -28,6 +28,9 @@ myInsurance.addEventListener('submit', (e) => {
     let yourHealthConditionAdd = 0
     let yourHabitAdd = 0
     switch (true) {
+        case age < 18:
+            yourPercentage = 0
+            break;
         case 18 <= age && age <= 25:
             yourPercentage = 0.1;
             break;
@@ -49,12 +52,12 @@ myInsurance.addEventListener('submit', (e) => {
             yourPercentage
             break
     }
+    
     yourHealthConditionAdd = healthCondition.length * 0.01;
     yourHabitAdd = (badHabit.length - goodHabit.length) * 0.05;
     yourPercentage = yourPercentage + (yourHealthConditionAdd + yourHabitAdd)
     yourFixed = yourFixed + (yourPercentage * yourFixed)
-    console.log('your bad headth condition : ' + healthCondition + ' your good habit : ' + goodHabit + ' bad habit : ' + badHabit + ' that lead to total percentage is : ' + yourPercentage)
     let resul = document.querySelector('#result')
-    resul.textContent = `${yourFixed} Eur which include : 500 eur fixed price  + perscentage for your total health condition and habit : )`
+    resul.textContent = `${yourFixed} Eur which include : 500 eur fixed price  + perscentage for your total health condition and habit : ${yourPercentage * 100}% )`
 })
 

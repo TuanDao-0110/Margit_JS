@@ -12,7 +12,9 @@ body {
 
 /* place-content: center; */
 }
-
+label{
+    text-align: center;
+}
 #myInsurance {
     display: flex;
     flex-direction: column;

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" class="form" id="myInsurance">
+      <h2>insurance calculator</h2>
+      <div class="info">
+        <label for="name">Please input your name</label><br />
+        <input type="text" name="name" placeholder="please input your name" id="name" required />
+        <label for="number">please input your age</label><br />
+        <input type="number" name="age" id="age" placeholder="please input you age " required />
+      </div>
+      <h3>current health condition </h3>
+      <div class="health">
+        <input type="checkbox" name="hyper" id="hyper" value="condition_bad" />
+        <label for="hyper"><img src="./img/hypertension.jpeg" alt=""></label>
+        <input type="checkbox" name="blood" id="blood" value="condtion_bad" />
+        <label for="blood"><img src="./img/blood.jpeg" alt=""></label>
+        <input type="checkbox" name="overWeight" id="overWeight" value="condition_bad" />
+        <label for="overWeight"><img src="./img/overweight.jpeg" alt=""></label>
+      </div>
+      <h3>habit</h3>
+      <div class="habit">
+        <input type="checkbox" name="smoking" id="smoking" value="habit_bad" />
+        <label for="smoking" class="smoking"><img src="./img/smoking.avif" alt=""></label>
+        <input type="checkbox" name="alcohol" id="alcohol" value="habit_bad" />
+        <label for="alcohol" class="alcohol"><img src="./img/alcohol.jpeg" alt=""></label>
+        <input type="checkbox" name="daily_ex" id="daily_ex" value="habit_good" />
+        <label for="daily_ex" class="daily"><img src="./img/exercise.jpeg" alt=""></label>
+        <input type="checkbox" name="drug" id="drug" value="habit_bad" />
+        <label for="drug" class="drug"><img src="./img/drug.jpeg" alt=""></label><br />
+      </div>
+      <button type="submit" value="Submit form">check my price</button>
+      <p>your price for insurance is : <span id="result"></span></p>
+    </form>
+    <script src="./main.js"></script>
+  </body>
+</html>

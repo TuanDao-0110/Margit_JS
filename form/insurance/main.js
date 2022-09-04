@@ -55,9 +55,9 @@ myInsurance.addEventListener('submit', (e) => {
     
     yourHealthConditionAdd = healthCondition.length * 0.01;
     yourHabitAdd = (badHabit.length - goodHabit.length) * 0.05;
-    yourPercentage = yourPercentage + (yourHealthConditionAdd + yourHabitAdd)
-    yourFixed = yourFixed + (yourPercentage * yourFixed)
+    yourPercentage = (yourPercentage + (yourHealthConditionAdd + yourHabitAdd)).toFixed(2)
+    yourFixed = yourFixed + ((yourPercentage) * yourFixed)
     let resul = document.querySelector('#result')
-    resul.textContent = `${yourFixed} Eur which include : 500 eur fixed price  + perscentage for your total health condition and habit : ${yourPercentage * 100}% `
+    resul.textContent = `${yourFixed} Eur which include : 500 eur fixed price  + perscentage for your total health condition and habit : ${(yourPercentage * 100).toFixed(2)}% `
 })
 

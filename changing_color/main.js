@@ -40,10 +40,13 @@ for (let i = 0; i < btns.length; i++) {
         form.addEventListener('submit', e => e.preventDefault())
         setDirection(e.target.value)
         let current = document.getElementsByClassName("active");
-        console.log(this)
-        current[0].className = current[0].className.replace(" active", "");
+        let labels = document.querySelectorAll('label')
+        current[0].className = current[0].className.replace("active", "");
         // this.className += " active";
-        
+        labels.forEach(e => (e.htmlFor === this.id) && (e.className += 'active'))
+        // console.log(labels)
+
+
     });
 }
 

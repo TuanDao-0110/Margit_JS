@@ -1,4 +1,5 @@
 let myInsurance = document.querySelector('#myInsurance')
+let inputs = document.querySelectorAll('input')
 let myFunction = (e) => {
     e.preventDefault();
 

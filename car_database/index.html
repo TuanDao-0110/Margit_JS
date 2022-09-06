@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Car data</title>
+  </head>
+  <body>
+    <div class="search">
+      <h2>search car licence</h2>
+      <label for=""></label>
+      <input type="text" id="search_input"/>
+      <button id="search">search</button>
+      <br>
+      <div id="search_result"></div>
+    </div>
+
+    <div class="infor">
+      <div class="insert">
+        <form id="form"  action="">
+          <h2>inser car data</h2>
+          <label for="licence">licene number</label>
+          <input type="text" name="licence" id="licence" required />
+          <label for="carMaker">car maker</label>
+          <input type="text" name="carMaker" id="car_maker" required />
+          <label for="model">car model</label>
+          <input type="text" name="model" id="car_model" required />
+          <label for="carOwner">car owner</label>
+          <input type="text" name="carOwner" id="car_owner" required />
+          <label for="price">price</label>
+          <input type="text" name="price" id="car_price" required />
+          <label for="color">car color</label>
+          <input type="text" name="color" id="car_color" required />
+          <div class="btns">
+            <button type="submit">add car</button>
+            <button id="reset">reset</button>
+          </div>
+        </form>
+      </div>
+      <div class="data_base">
+        <table>
+          <thead>
+            <tr>
+              <th>licence</th>
+              <th>car maker</th>
+              <th>model</th>
+              <th>price</th>
+              <th>color</th>
+            </tr>
+          </thead>
+          <tbody id="data">
+         
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>

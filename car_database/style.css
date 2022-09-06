@@ -1,0 +1,101 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+}
+body {
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+}
+/* search  */
+.search {
+    background-color: aliceblue;
+    flex-grow: 1;
+}
+.search {
+    border-bottom: 1rem solid #4da8cb;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 3rem;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+.search input {
+    width: 30%;
+    font-size: 1rem;
+    padding: 0.4rem;
+    border-radius: 5px;
+}
+#search_result {
+    width: 100%;
+    font-size: 1.4rem;
+}
+/* insert car */
+.infor {
+    background-color: bisque;
+    flex-grow: 3;
+    display: flex;
+    padding: 2rem;
+}
+
+.insert {
+    flex-grow: 1;
+    width: 50%;
+    gap: 1rem;
+}
+.insert form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1rem;
+}
+.infor form h2 {
+    width: 100%;
+}
+.infor form label {
+    width: 40%;
+}
+.infor form input {
+    width: 80%;
+    font-size: 2rem;
+    padding: 0.4rem;
+    border-radius: 5px;
+}
+.btns {
+    width: 100%;
+}
+button {
+    padding: 0.5rem;
+    font-size: 1rem;
+    background-color: #4da8cb;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+button:hover {
+    background-color: aliceblue;
+}
+
+.data_base {
+    flex-grow: 1;
+    display: flex;
+    justify-content: end;
+}
+
+/* table */
+th {
+    padding: 0.3rem;
+    background-color: #4da8cb;
+    font-size: 1.2rem;
+}
+table {
+    height: fit-content;
+    text-align: center;
+}
+td {
+    font-size: 1rem;
+    padding: 1rem;
+}

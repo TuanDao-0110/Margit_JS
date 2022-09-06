@@ -1,22 +1,124 @@
-body { 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+}
+body {
     background-color: black;
     height: 100vh;
     display: flex;
-    justify-content: center;
+    /* flex-flow: row; */
+    /* justify-content: left; */
     /* align-content: center; */
+    /* background: linear-gradient(to left bottom, rgb(0, 136, 255), hsla(33, 94%, 57%, 1)); */
+}
+h2 {
+}
+
+/*  color pallet */
+
+#color_pick {
+    background-color: aliceblue;
+    /* width: fit-content;
+     */
+flex-grow: 1;
+width: 20%;
+}
+
+#color_show { 
+    height: 100%;
+    flex-grow: 5;
+    /* background-color: red; */
+
+}
+
+/* form */
+form {
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    height: 80%;
+    justify-content: space-evenly;
+    align-items: center;
+    /* width: ; */
+    overflow: hidden;
+}
+h3 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+/* color */
+.color_div input {
+    height: 3rem;
+    width: 7rem;
+    border: 0;
+}
+/* direction */
+.direction {
+    /* width: 40%; */
+    /* margin: auto; */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
     align-items: center;
 }
-h2 { 
-    font-size: 100px;
-    font-weight:100;
- color: #fff;
-  text-shadow:
-    0 0 7px cyan,
-    0 0 22px rgb(195, 20, 20),
-    /* 0 0 21px #fff, */
-    /* 0 0 42px #bc13fe, */
-    /* 0 0 82px #bc13fe, */
-    /* 0 0 92px #bc13fe, */
-    /* 0 0 102px #bc13fe, */
-    0 0 151px #bc13fe;
+label {
+    /* display: none; */
+    padding: 1rem;
+    /* height: 3rem; */
+    border-radius: 4px;
+    /* font-size: 2rem; */
+    color: white;
+    background-color: #311616;
+    width:30%;
+    cursor: pointer;
+    transition: all 500ms;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+label:hover {
+    background-color: aqua;
+}
+.btn { 
+    display: none;
+}
+
+.none {
+    /* display: n; */
+    opacity: 0;
+}
+.rotate_45 { 
+    transform: rotate(45deg);
+}
+
+.rotate_90{ 
+    transform: rotate(90deg);
+}
+.rotate_135 { 
+    transform: rotate(135deg);
+}
+
+.rotate_180 { 
+    transform: rotate(180deg);
+}
+
+.rotate_225 { 
+    transform: rotate(225deg);
+}
+.rotate_270 {
+    transform: rotate(270deg);
+}
+.rotate_315 { 
+    transform: rotate(315deg);
+}
+.rotate_360 { 
+    transform: rotate(360deg);
+}
+
+/* active class */
+.active { 
+    background-color: rgb(77, 191, 191);
 }

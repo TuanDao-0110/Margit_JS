@@ -4,13 +4,61 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
   <body>
-    <h2>
-        light
-    </h2>
+    
+    <div id="color_pick">
+      <form action="" class="form_color" id="form_color" >
+        <h2>linear gradient generator</h2>
+        <div class="color_div">
+          <h3>color</h3>
+          <input type="color" id="color_1" />
+          <input type="color" name="" id="color_2" />
+        </div>
+        <div >
+          <h3>direction</h3>
+          <div class="direction">
+            <label for="bottom_right" class="active"><i class="fa fa-arrow-down rotate_315"></i></label>
+            <input type="button" id="bottom_right" class="btn " value="bottom right" data="bottom right"></input>
+            <label for="bottom"><i class="fa fa-arrow-down "></i></label>
+            <input type="button" id="bottom" value="bottom" class="btn" ></input>
+            <label for="bottom_left"><i class="fa fa-arrow-down rotate_45"></i></label>
+            <input type="button" id="bottom_left" value="bottom left" class="btn"></input>
+            <label for="right"><i class="fa fa-arrow-down rotate_270"></i></label>
+            <input type="button" id="right" value="right" class="btn"></input>
+            <label for="none" class="none"><i class="fa fa-arrow-down"></i></label>
+            <input type="button" id = 'none'class="btn none" disabled></input>
+            <label for="left"><i class="fa fa-arrow-down rotate_90"></i></label>
+            <input type="button" id="left" value="left" class="btn"></input>
+            <label for="top_right"><i class="fa fa-arrow-down rotate_225"></i></label>
+
+            <input type="button" id="top_right" value="top right" class="btn"></input>
+            <label for="top"><i class="fa fa-arrow-down rotate_180"></i></label>
+
+            <input type="button" id="top" value="top" class="btn"> </input>
+            <label for="top_left"><i class="fa fa-arrow-down rotate_135"></i></label>
+
+            <input type="button" id = 'top_left' value="top left" class="btn"></input>
+          </div>
+        </div>
+      </form>
+      <div >
+Css Code : <span id="result"></span>
+      </div>
+    </div>
+    <div id="color_show">
+     
+    </div>
     <script src="./main.js"></script>
   </body>
 </html>

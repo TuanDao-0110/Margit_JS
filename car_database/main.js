@@ -36,9 +36,8 @@ let arrCar = [{
 // add car
 const addData = (arrCar) => {
     tableText = ''
-    arrCar.map((item) => {
-
-        tableText += `<tr>
+    arrCar.map((item,index) => {
+        tableText += `<tr ${index %2 ==0 ? 'class= black' : ''}>
         <td>${item.licence}</td>
         <td>${item.carMaker}</td>
         <td>${item.model}</td>

@@ -99,3 +99,6 @@ td {
     font-size: 1rem;
     padding: 1rem;
 }
+.black { 
+    background-color: rgba(59, 68, 68, 0.235);
+}

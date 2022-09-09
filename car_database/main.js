@@ -60,7 +60,7 @@ form.addEventListener('submit', (e) => {
     }
     arrCar.push(temp)
     addData(arrCar)
-    console.log(arrCar)
+    console.table(arrCar)
 })
 // empty the input
 const resetInput = () => {
@@ -73,7 +73,6 @@ reset.addEventListener('click', resetInput)
 // search function
 const search = () => {
     const index = arrCar.findIndex(e => e.licence === searchText.value)
-    console.log(arrCar[1].carOwner);
         (index !== -1) ? searchResult.textContent = `this car belong to ${arrCar[index].carOwner}` : searchResult.textContent = 'this licence no result';
 }
 searchButton.addEventListener('click', search)

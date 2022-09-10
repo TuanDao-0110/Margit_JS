@@ -36,8 +36,8 @@ let arrCar = [{
 // add car
 const addData = (arrCar) => {
     tableText = ''
-    arrCar.map((item,index) => {
-        tableText += `<tr ${index %2 ==0 ? 'class= black' : ''}>
+    arrCar.map((item, index) => {
+        tableText += `<tr ${index % 2 == 0 ? 'class= black' : ''}>
         <td>${item.licence}</td>
         <td>${item.carMaker}</td>
         <td>${item.model}</td>
@@ -55,12 +55,27 @@ addData(arrCar)
 form.addEventListener('submit', (e) => {
     e.preventDefault()
     let temp = {}
+    let index = 0
     for (item of inputs) {
-        temp[item.name] = item.value
+        index++;
+        let chectkIndex = arrCar.findIndex(e => e.licence === item.value)
+        if (index === 1) {
+            if (chectkIndex !== -1) {
+
+                return alert('this licence number already used')
+            } else {
+                temp[item.name] = item.value
+
+            }
+        }
+        if (index > 1) {
+            temp[item.name] = item.value
+        }
     }
     arrCar.push(temp)
     addData(arrCar)
     console.table(arrCar)
+    resetInput()
 })
 // empty the input
 const resetInput = () => {
@@ -74,5 +89,6 @@ reset.addEventListener('click', resetInput)
 const search = () => {
     const index = arrCar.findIndex(e => e.licence === searchText.value)
         (index !== -1) ? searchResult.textContent = `this car belong to ${arrCar[index].carOwner}` : searchResult.textContent = 'this licence no result';
+
 }
 searchButton.addEventListener('click', search)

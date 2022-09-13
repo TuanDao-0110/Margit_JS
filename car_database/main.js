@@ -5,6 +5,7 @@ let reset = document.querySelector('#reset')
 let searchButton = document.querySelector('#search')
 let searchText = document.querySelector('#search_input')
 let searchResult = document.querySelector('#search_result')
+let resetTable = document.querySelector('#reset_table')
 // create text input for data-table
 let tableText = ''
 // arr that store all information
@@ -36,7 +37,7 @@ let arrCar = [{
 // add car
 const addData = (arrCar) => {
     tableText = ''
-    arrCar.map((item, index) => {
+    arrCar?.map((item, index) => {
         tableText += `<tr ${index % 2 == 0 ? 'class= black' : ''}>
         <td>${item.licence}</td>
         <td>${item.carMaker}</td>
@@ -83,11 +84,19 @@ const resetInput = () => {
         item.value = ''
     }
 }
+
+// empty table
+const emptyTable = () => {
+    arrCar.length = 0
+    addData(arrCar)
+}
+resetTable.addEventListener('click', emptyTable)
 // click reset button to empty the input
 reset.addEventListener('click', resetInput)
 // search function
 const search = () => {
-    const index = arrCar.findIndex(e => e.licence === searchText.value)
+    
+    const index = arrCar?.findIndex(e => e.licence === searchText.value);
         (index !== -1) ? searchResult.textContent = `this car belong to ${arrCar[index].carOwner}` : searchResult.textContent = 'this licence no result';
 
 }

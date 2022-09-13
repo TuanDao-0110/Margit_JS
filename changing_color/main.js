@@ -15,7 +15,6 @@ const colorChange = (e, objectColorValue) => {
         objectStyle.color_1Value = e.target.value
     }
     if (objectColorValue === 2) {
-        console.log('done')
         objectStyle.color_2Value = e.target.value
     }
     let styleColor = `linear-gradient(to ${objectStyle.direction} , ${objectStyle.color_1Value}, ${objectStyle.color_2Value})`

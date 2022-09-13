@@ -10,22 +10,40 @@ let objectStyle = {
     color_1Value: '#aaa',
     color_2Value: '#aaa'
 }
-
-// let body = document.body
-
-color_1.addEventListener('input', (e) => {
-    objectStyle.color_1Value = e.target.value
+const colorChange = (e, objectColorValue) => {
+    if (objectColorValue == 1) {
+        objectStyle.color_1Value = e.target.value
+    }
+    if (objectColorValue === 2) {
+        console.log('done')
+        objectStyle.color_2Value = e.target.value
+    }
     let styleColor = `linear-gradient(to ${objectStyle.direction} , ${objectStyle.color_1Value}, ${objectStyle.color_2Value})`
+    console.log(styleColor)
     color_show.style.background = styleColor
     result.textContent = styleColor
+}
+// let body = document.body
+color_1.addEventListener('input', (e) => {
+    colorChange(e, 1)
 })
 color_2.addEventListener('input', (e) => {
-    objectStyle.color_2Value = e.target.value
-    let styleColor = `linear-gradient(to ${objectStyle.direction} , ${objectStyle.color_1Value}, ${objectStyle.color_2Value})`
-    color_show.style.background = styleColor
-    result.textContent = styleColor
-
+    colorChange(e, 2)
 })
+
+// color_1.addEventListener('input', (e) => {
+//     objectStyle.color_1Value = e.target.value
+//     let styleColor = `linear-gradient(to ${objectStyle.direction} , ${objectStyle.color_1Value}, ${objectStyle.color_2Value})`
+//     color_show.style.background = styleColor
+//     result.textContent = styleColor
+// })
+// color_2.addEventListener('input', (e) => {
+//     objectStyle.color_2Value = e.target.value
+//     let styleColor = `linear-gradient(to ${objectStyle.direction} , ${objectStyle.color_1Value}, ${objectStyle.color_2Value})`
+//     color_show.style.background = styleColor
+//     result.textContent = styleColor
+
+// })
 const setDirection = (buttonValue) => {
     objectStyle.direction = buttonValue
     let styleColor = `linear-gradient(to ${objectStyle.direction} , ${objectStyle.color_1Value}, ${objectStyle.color_2Value})`

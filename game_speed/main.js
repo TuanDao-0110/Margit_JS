@@ -21,7 +21,7 @@ let totalScore = 0
 // order while flag will be false. 
 
 //  that mean  user lose the game
-let flag = true;
+let flag = false;
 
 
 
@@ -63,6 +63,7 @@ const turnOffCandle = (arr) => {
 
 const checkUntil = (millisecondsInterval) => {
     let count = 1
+    flag = true
     let promise = new Promise((resolve, reject) => {
 
         let timer = setInterval(function () {
@@ -130,7 +131,7 @@ const resetGame = () => {
         i.classList.add('fire')
 
     })
-    flag = true
+    flag = false
 }
 
 

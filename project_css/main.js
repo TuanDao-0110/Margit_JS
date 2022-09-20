@@ -33,8 +33,9 @@ burger.addEventListener('click', () => {
 
 const toogleMenu = () => {
     if (displayMenu.classList.contains('display_menu')) {
-        console.log('reomve')
         displayMenu.classList.remove('display_menu')
+        burger.classList.remove('change')
+
     } else {
         displayMenu.classList.add('display_menu')
 
@@ -61,12 +62,14 @@ const opendModal = () => {
     if (modal.classList.contains('display_none')) {
 
         modal.classList.remove('display_none')
+        modal.classList.add('delay_animation')
     }
 }
 
 const closeModal = () => {
     if (!modal.classList.contains('display_none')) {
         modal.classList.add('display_none')
+        modal.classList.remove('delay_animation')
     }
 }
 

@@ -55,10 +55,18 @@ candles.forEach(candle =>
 
 // 3. random turn off the light 
 const turnOffCandle = (arr) => {
-    let randomNumber = Math.round(Math.random() * 3)
+    let oldNumber = 0
+    let randomNumber = 0
     // console.log(randomNumber)
-
-    arr[randomNumber].classList.remove('fire')
+    let timer = setInterval(() => {
+        if (oldNumber !== randomNumber) {
+            oldNumber = randomNumber
+            arr[randomNumber].classList.remove('fire')
+            clearInterval(timer)
+        } else {
+            randomNumber = Math.round(Math.random() * 3)
+        }
+    });
 
 }
 // 4. interval function auto turn off the light
@@ -67,26 +75,23 @@ const turnOffCandle = (arr) => {
 
 
 const checkUntil = (millisecondsInterval) => {
-    let count = 1
     flag = true
     let promise = new Promise((resolve, reject) => {
 
-        let timer = setInterval(function () {
-            if (document.querySelectorAll('.fire').length < 4) {
-                reject('lose')
+        let timer = setTimeout(function () {
+            if (document.querySelectorAll('.fire').length < 4 && stopFlag) {
+                reject(false)
                 // console.log('you lose the game')
-                clearInterval(timer)
+                // clearInterval(timer)
                 return
             }
-            else if (document.querySelectorAll('.fire').length === 4 && flag) {
-                // resolve(true)
-                count++
+            else if (document.querySelectorAll('.fire').length === 4) {
+                resolve(true)
+                // count++
                 // console.log('total score' + totalScore)
-                turnOffCandle(lights)
-                clearInterval(timer)
-                runTheGame(millisecondsInterval - (count * 50))
-            } else if (!flag) {
-                clearInterval(timer)
+                // turnOffCandle(lights)
+                // clearInterval(timer)
+                // runTheGame(millisecondsInterval - (count * 50))
             }
         }, millisecondsInterval);
     });
@@ -108,11 +113,21 @@ const checkToRun = () => {
 // 7. run the game
 
 const runTheGame = (time) => {
+    let count = 1
 
     // let timer = 2000
 
     if (stopFlag) {
-        checkUntil(time).then(res => { }).catch(err => {
+        checkUntil(time).then(res => {
+            if (stopFlag) {
+
+                turnOffCandle(lights)
+
+                runTheGame(time - (count * 50))
+            }
+
+
+        }).catch(err => {
             flag = false
             showModal()
         })
@@ -131,6 +146,7 @@ start.addEventListener('click', (e) => {
 
 const resetGame = () => {
     totalScore = 0;
+
     score.innerHTML = totalScore
     start.classList.remove('clicked')
     lights.forEach(i => {
@@ -139,6 +155,7 @@ const resetGame = () => {
 
     })
     flag = false
+    stopFlag = true
 }
 
 

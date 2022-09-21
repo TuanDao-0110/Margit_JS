@@ -67,17 +67,16 @@ const checkUntil = (millisecondsInterval) => {
     let promise = new Promise((resolve, reject) => {
 
         let timer = setInterval(function () {
-
             if (document.querySelectorAll('.fire').length < 4) {
                 reject('you lose the game')
-                console.log('you lose the game')
+                // console.log('you lose the game')
                 clearInterval(timer)
                 return
             }
             else {
                 // resolve(true)
                 count++
-                console.log('total score' + totalScore)
+                // console.log('total score' + totalScore)
                 turnOffCandle(lights)
                 clearInterval(timer)
                 runTheGame(millisecondsInterval - (count * 50))

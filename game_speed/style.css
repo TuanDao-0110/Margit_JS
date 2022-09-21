@@ -105,6 +105,10 @@ h1 {
     background: linear-gradient(orange, darkorange, sienna, saddlebrown, rgba(0, 0, 0, 0.4) 90%);
     bottom: 0%;
     /* left: 45%; */
+    transition: all 100ms;
+}
+.candle:hover {
+    transform: translateY(-10px);
 }
 .candle:before {
     content: "";

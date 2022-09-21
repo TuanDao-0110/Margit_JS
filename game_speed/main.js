@@ -28,7 +28,7 @@ let flag = false;
 
 let stopFlag = true
 
-
+let oldNumber = 0
 
 // 1. turn on the candle
 const turnOnCandle = (candle) => {
@@ -55,18 +55,24 @@ candles.forEach(candle =>
 
 // 3. random turn off the light 
 const turnOffCandle = (arr) => {
-    let oldNumber = 0
+    // let randomNumber = Math.round(Math.random() * 3)
+    // console.log(randomNumber()
+    // arr[randomNumber].classList.remove('fire')
+    let createRandomNum = () => {
+        return Math.round(Math.random() * 3)
+    }
+    let flag = true
+    console.log('turn of the candle')
     let randomNumber = 0
-    // console.log(randomNumber)
-    let timer = setInterval(() => {
-        if (oldNumber !== randomNumber) {
+    while (flag) {
+        if (randomNumber === oldNumber) {
+            randomNumber = createRandomNum()
+        } else {
+            flag = false
             oldNumber = randomNumber
             arr[randomNumber].classList.remove('fire')
-            clearInterval(timer)
-        } else {
-            randomNumber = Math.round(Math.random() * 3)
         }
-    });
+    }
 
 }
 // 4. interval function auto turn off the light
@@ -78,7 +84,7 @@ const checkUntil = (millisecondsInterval) => {
     flag = true
     let promise = new Promise((resolve, reject) => {
 
-        let timer = setTimeout(function () {
+        setTimeout(function () {
             if (document.querySelectorAll('.fire').length < 4 && stopFlag) {
                 reject(false)
                 // console.log('you lose the game')

@@ -4,7 +4,7 @@
 // 4. button start ==> click ==> to start the game
 // 5. button gameover ==> click ==> to reset the game
 // 6. 
-
+const cursor = document.querySelector('.cursor')
 let lights = document.querySelectorAll('.light')
 let candles = document.querySelectorAll('.candle')
 let count_down = document.querySelector('.count_down')
@@ -14,6 +14,8 @@ let start = document.querySelector('.start')
 let reset = document.querySelector(".reset")
 let closeBtn = document.querySelector('#close')
 let modal = document.querySelector('#modal')
+let stopBtn = document.querySelector('.stop')
+
 let totalScore = 0
 // flag is use to check that in case the time run out 
 // if the user turn on light on time. 
@@ -22,6 +24,9 @@ let totalScore = 0
 
 //  that mean  user lose the game
 let flag = false;
+// let the stop flag that check when the game wanna stop 
+
+let stopFlag = true
 
 
 
@@ -36,10 +41,10 @@ const turnOnCandle = (candle) => {
 candles.forEach(candle =>
     candle.addEventListener('click', () => {
         if (flag) {
-
             turnOnCandle(candle.children[1])
             totalScore++
             score.textContent = totalScore
+
         }
     })
 )
@@ -68,18 +73,20 @@ const checkUntil = (millisecondsInterval) => {
 
         let timer = setInterval(function () {
             if (document.querySelectorAll('.fire').length < 4) {
-                reject('you lose the game')
+                reject('lose')
                 // console.log('you lose the game')
                 clearInterval(timer)
                 return
             }
-            else {
+            else if (document.querySelectorAll('.fire').length === 4 && flag) {
                 // resolve(true)
                 count++
                 // console.log('total score' + totalScore)
                 turnOffCandle(lights)
                 clearInterval(timer)
                 runTheGame(millisecondsInterval - (count * 50))
+            } else if (!flag) {
+                clearInterval(timer)
             }
         }, millisecondsInterval);
     });
@@ -104,11 +111,12 @@ const runTheGame = (time) => {
 
     // let timer = 2000
 
-
-    checkUntil(time).then(res => { }).catch(err => {
-        flag = false
-        showModal()
-    })
+    if (stopFlag) {
+        checkUntil(time).then(res => { }).catch(err => {
+            flag = false
+            showModal()
+        })
+    }
 
 }
 
@@ -152,4 +160,23 @@ closeBtn.addEventListener('click', () => {
         console.log('do it')
         closeModal()
     }
+})
+
+
+// cursor: 
+
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.pageX + 'px'
+    cursor.style.top = e.pageY + 'px'
+})
+
+
+// 11. stop game
+
+const stopThegame = () => {
+    stopFlag = false
+}
+
+stopBtn.addEventListener('click', () => {
+    stopThegame()
 })

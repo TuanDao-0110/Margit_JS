@@ -3,6 +3,8 @@
     --whiteColor: rgb(85, 12, 49);
     --headerTextShadowColor: rgb(167, 89, 38);
     --colorBtn: #db3eb1;
+    --colorReset: #29e4af;
+    --colorStop: #de1e24;
     --clickColor: #279f23;
 }
 
@@ -27,6 +29,22 @@ body {
     background: url("https://images8.alphacoders.com/625/625551.jpg");
     background-size: cover;
     font-family: "Roboto", sans-serif;
+}
+
+/* cursor */
+.cursor {
+    opacity: 0;
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: url("./mouse_change.png");
+    /* background-color: #fff; */
+    background-size: cover;
+    transition: 0.1s;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    mix-blend-mode: difference;
 }
 /* header   */
 h1 {
@@ -110,6 +128,9 @@ h1 {
 .candle:hover {
     transform: translateY(-10px);
 }
+.candle:hover ~ .cursor {
+    transform: scale(60%);
+}
 .candle:before {
     content: "";
     position: absolute;
@@ -149,7 +170,7 @@ h1 {
 }
 .fire:hover {
     /* cursor: alias; */
-    cursor: url("../../logo/love_logo.png"), auto;
+    /* cursor: url("../../logo/love_logo.png"), auto; */
 }
 @keyframes move {
     0% {
@@ -176,15 +197,28 @@ h1 {
 }
 
 .btn {
-    filter: drop-shadow(0 0 15px var(--colorBtn)) drop-shadow(0 0 50px var(--colorBtn)) contrast(2) brightness(4);
-    color: var(--colorBtn);
     font-size: 1rem;
     border-radius: 50px;
     padding: 1rem;
-    border: 4px solid var(--colorBtn);
     background-color: transparent;
     cursor: pointer;
     transition: all 0.5s;
+}
+
+.start {
+    filter: drop-shadow(0 0 15px var(--colorBtn)) drop-shadow(0 0 50px var(--colorBtn)) contrast(2) brightness(4);
+    color: var(--colorBtn);
+    border: 4px solid var(--colorBtn);
+}
+.stop {
+    filter: drop-shadow(0 0 15px var(--colorStop)) drop-shadow(0 0 50px var(--colorStop)) contrast(2) brightness(4);
+    color: var(--colorStop);
+    border: 4px solid var(--colorStop);
+}
+.reset {
+    filter: drop-shadow(0 0 15px var(--colorReset)) drop-shadow(0 0 50px var(--colorReset)) contrast(2) brightness(4);
+    color: var(--colorReset);
+    border: 4px solid var(--colorReset);
 }
 
 .btn:hover {

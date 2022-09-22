@@ -15,6 +15,7 @@ let reset = document.querySelector(".reset")
 let closeBtn = document.querySelector('#close')
 let modal = document.querySelector('#modal')
 let stopBtn = document.querySelector('.stop')
+let yourLife = document.querySelector('.your_life')
 
 let totalScore = 0
 // flag is use to check that in case the time run out 
@@ -22,18 +23,26 @@ let totalScore = 0
 // flag will be true 
 // order while flag will be false. 
 
-//  that mean  user lose the game
+//  that mean  user lose the game , but it also prevent user click before the game run
 let flag = false;
 // let the stop flag that check when the game wanna stop 
-
 let stopFlag = true
-
+// oldNumber  to make sure the number  will not the same 2 in 1 round
 let oldNumber = 0
+// your life balance left ==> make sure how many life you want
+let yourLifeLeft = 3
+yourLife.textContent = yourLifeLeft
 
 // 1. turn on the candle
 const turnOnCandle = (candle) => {
-
-    candle.classList.add('fire')
+    if (candle.classList.contains('fire')) {
+        reduceLife()
+    } else {
+        addLife()
+        candle.classList.add('fire')
+        totalScore++
+        score.textContent = totalScore
+    }
 
 
 }
@@ -42,17 +51,10 @@ candles.forEach(candle =>
     candle.addEventListener('click', () => {
         if (flag) {
             turnOnCandle(candle.children[1])
-            totalScore++
-            score.textContent = totalScore
 
         }
     })
 )
-
-
-
-
-
 // 3. random turn off the light 
 const turnOffCandle = (arr) => {
     // let randomNumber = Math.round(Math.random() * 3)
@@ -62,22 +64,24 @@ const turnOffCandle = (arr) => {
         return Math.round(Math.random() * 3)
     }
     let flag = true
-    console.log('turn of the candle')
     let randomNumber = 0
     while (flag) {
         if (randomNumber === oldNumber) {
             randomNumber = createRandomNum()
         } else {
-            flag = false
             oldNumber = randomNumber
-            arr[randomNumber].classList.remove('fire')
+            if (arr[randomNumber].classList.contains('fire')) {
+
+                flag = false
+                arr[randomNumber].classList.remove('fire')
+            }
+
         }
     }
 
 }
-// 4. interval function auto turn off the light
+// 4. promise to check  function auto turn off the light
 
-// const intervalTurnOffLight = setInterval(turnOffCandle(lights), 2000)
 
 
 const checkUntil = (millisecondsInterval) => {
@@ -105,18 +109,34 @@ const checkUntil = (millisecondsInterval) => {
     return promise;
 }
 
-// 5. count down 
-const countDown = () => {
+// 5. add the life 
+const addLife = () => {
+    if (yourLifeLeft < 3) {
+
+        yourLifeLeft++
+        yourLife.textContent = yourLifeLeft
+    }
 
 }
 
 
-// 6.check the if and run to turn off the light againt
-const checkToRun = () => {
+// 6.reduce the life number
+const reduceLife = () => {
 
+    if (yourLifeLeft >0){
+
+        yourLifeLeft--
+        yourLife.textContent = yourLifeLeft
+        
+    }
+    if(yourLifeLeft ===0){
+        flag = false
+        stopFlag =false
+        showModal()
+    }
 }
 
-// 7. run the game
+// 7. run the game function ==> 
 
 const runTheGame = (time) => {
     let count = 1
@@ -126,46 +146,51 @@ const runTheGame = (time) => {
     if (stopFlag) {
         checkUntil(time).then(res => {
             if (stopFlag) {
-
                 turnOffCandle(lights)
-
-                runTheGame(time - (count * 50))
+                runTheGame(time - (totalScore * 10))
             }
-
-
         }).catch(err => {
-            flag = false
-            showModal()
+            if (yourLifeLeft > 0) {
+                reduceLife()
+                turnOffCandle(lights)
+                runTheGame(time - (totalScore * 10))
+
+            } else {
+                flag = false
+                showModal()
+            }
         })
     }
 
 }
 
-// 8 start
+// 8 start to run the game when click button
 start.addEventListener('click', (e) => {
     start.classList.add('clicked')
-    runTheGame(2000)
+    runTheGame(3000)
 })
 
 
 // 9. reset the game 
 
-const resetGame = () => {
-    totalScore = 0;
+// const resetGame = () => {
+//     totalScore = 0;
 
-    score.innerHTML = totalScore
-    start.classList.remove('clicked')
-    lights.forEach(i => {
-        // console.log(i)
-        i.classList.add('fire')
+//     score.innerHTML = totalScore
+//     start.classList.remove('clicked')
+//     lights.forEach(i => {
+//         // console.log(i)
+//         i.classList.add('fire')
 
-    })
-    flag = false
-    stopFlag = true
-}
-
-
-reset.addEventListener('click', resetGame)
+//     })
+//     flag = false
+//     stopFlag = true
+//     yourLifeLeft = 3
+//     yourLife.textContent = yourLifeLeft
+// }
+reset.addEventListener('click', ()=>{
+    window.location.reload();
+})
 
 // 10. on/off modal 
 
@@ -176,11 +201,9 @@ const showModal = () => {
 const closeModal = () => {
     modal.classList.add('display_none')
 }
-
+// 11.  put event for close button
 closeBtn.addEventListener('click', () => {
-    console.log(modal.classList.contains('display_none'))
     if (!modal.classList.contains('.display_none')) {
-        console.log('do it')
         closeModal()
     }
 })
@@ -198,6 +221,8 @@ document.addEventListener('mousemove', (e) => {
 
 const stopThegame = () => {
     stopFlag = false
+    flag = false
+    alert('game stop')
 }
 
 stopBtn.addEventListener('click', () => {

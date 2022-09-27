@@ -16,7 +16,7 @@ let closeBtn = document.querySelector('#close')
 let modal = document.querySelector('#modal')
 let stopBtn = document.querySelector('.stop')
 let yourLife = document.querySelector('.your_life')
-
+let rankDocument = document.querySelector('.rank')
 let totalScore = 0
 // flag is use to check that in case the time run out 
 // if the user turn on light on time. 
@@ -31,8 +31,9 @@ let stopFlag = true
 let oldNumber = 0
 // your life balance left ==> make sure how many life you want
 let yourLifeLeft = 3
-yourLife.textContent = yourLifeLeft
-
+// yourLife.textContent = yourLifeLeft
+// create a array: 
+let rankList = []
 // 1. turn on the candle
 const turnOnCandle = (candle) => {
     if (candle.classList.contains('fire')) {
@@ -41,6 +42,7 @@ const turnOnCandle = (candle) => {
         addLife()
         candle.classList.add('fire')
         totalScore++
+
         score.textContent = totalScore
     }
 
@@ -57,9 +59,7 @@ candles.forEach(candle =>
 )
 // 3. random turn off the light 
 const turnOffCandle = (arr) => {
-    // let randomNumber = Math.round(Math.random() * 3)
-    // console.log(randomNumber()
-    // arr[randomNumber].classList.remove('fire')
+
     let createRandomNum = () => {
         return Math.round(Math.random() * 3)
     }
@@ -97,11 +97,7 @@ const checkUntil = (millisecondsInterval) => {
             }
             else if (document.querySelectorAll('.fire').length === 4) {
                 resolve(true)
-                // count++
-                // console.log('total score' + totalScore)
-                // turnOffCandle(lights)
-                // clearInterval(timer)
-                // runTheGame(millisecondsInterval - (count * 50))
+
             }
         }, millisecondsInterval);
     });
@@ -114,7 +110,8 @@ const addLife = () => {
     if (yourLifeLeft < 3) {
 
         yourLifeLeft++
-        yourLife.textContent = yourLifeLeft
+        // yourLife.textContent = yourLifeLeft
+        lifeLeftRender()
     }
 
 }
@@ -123,15 +120,16 @@ const addLife = () => {
 // 6.reduce the life number
 const reduceLife = () => {
 
-    if (yourLifeLeft >0){
+    if (yourLifeLeft > 0) {
 
         yourLifeLeft--
-        yourLife.textContent = yourLifeLeft
-        
+        // yourLife.textContent = yourLifeLeft
+        lifeLeftRender()
+
     }
-    if(yourLifeLeft ===0){
+    if (yourLifeLeft === 0) {
         flag = false
-        stopFlag =false
+        stopFlag = false
         showModal()
     }
 }
@@ -139,9 +137,8 @@ const reduceLife = () => {
 // 7. run the game function ==> 
 
 const runTheGame = (time) => {
-    let count = 1
+    // let count = 1
 
-    // let timer = 2000
 
     if (stopFlag) {
         checkUntil(time).then(res => {
@@ -167,34 +164,45 @@ const runTheGame = (time) => {
 // 8 start to run the game when click button
 start.addEventListener('click', (e) => {
     start.classList.add('clicked')
+    reset.classList.remove('clicked')
+    stopBtn.classList.remove('clicked')
     runTheGame(3000)
 })
 
+// 9. reset : 
 
-// 9. reset the game 
+const resetGame = () => {
+    totalScore = 0;
 
-// const resetGame = () => {
-//     totalScore = 0;
-
-//     score.innerHTML = totalScore
-//     start.classList.remove('clicked')
-//     lights.forEach(i => {
-//         // console.log(i)
-//         i.classList.add('fire')
-
-//     })
-//     flag = false
-//     stopFlag = true
-//     yourLifeLeft = 3
-//     yourLife.textContent = yourLifeLeft
-// }
-reset.addEventListener('click', ()=>{
-    window.location.reload();
+    score.innerHTML = totalScore
+    start.classList.remove('clicked')
+    lights.forEach(i => {
+        i.classList.add('fire')
+    })
+    flag = false
+    stopFlag = true
+    yourLifeLeft = 3
+    // yourLife.textContent = yourLifeLeft
+    lifeLeftRender()
+}
+reset.addEventListener('click', () => {
+    // window.location.reload();
+    resetGame()
 })
 
 // 10. on/off modal 
 
 const showModal = () => {
+    // getLocalStore()
+    if (rankList?.length > 10) {
+        console.log('do it')
+        rankList?.slice(0, 1, totalScore)
+        rankList?.sort((a, b) => b - a)
+    } else {
+        rankList?.push(totalScore)
+        rankList?.sort((a, b) => b - a)
+    }
+    addRank()
     modal.classList.remove('display_none')
 }
 
@@ -228,3 +236,22 @@ const stopThegame = () => {
 stopBtn.addEventListener('click', () => {
     stopThegame()
 })
+// 12. lifeLeft render : 
+const lifeLeftRender = () => {
+    yourLife.innerHTML = ''
+    for (i = 0; i < yourLifeLeft; i++) {
+        yourLife.innerHTML += `<i class="fa fa-heart"></i>`
+    }
+}
+
+
+
+// 13. add rank to document
+
+
+const addRank = () => {
+    rankDocument.innerHTML = ''
+    rankList?.map((item, index) => {
+        rankDocument.innerHTML += `<p>  ${index === 0 ? 'highest score' : (`${index+1}-----------------`)} -- ${item}</p>`
+    })
+}

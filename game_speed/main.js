@@ -144,13 +144,13 @@ const runTheGame = (time) => {
         checkUntil(time).then(res => {
             if (stopFlag) {
                 turnOffCandle(lights)
-                runTheGame(time - (totalScore * 10))
+                runTheGame(time - (totalScore * 30))
             }
         }).catch(err => {
             if (yourLifeLeft > 0) {
                 reduceLife()
                 turnOffCandle(lights)
-                runTheGame(time - (totalScore * 10))
+                runTheGame(time - (totalScore * 30))
             } else {
                 flag = false
                 showModal()

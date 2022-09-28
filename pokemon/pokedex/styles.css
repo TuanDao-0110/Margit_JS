@@ -1,0 +1,51 @@
+
+/* card */
+.card {
+    width: 30%;
+    overflow: hidden;
+    border-radius: 5%;
+    box-shadow: blue 1em;
+    border: 1px solid saddlebrown;
+    background: rgb(101, 213, 101);
+    cursor: pointer;
+    transition: all 500ms;
+}
+
+.img:hover {
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
+
+.img {
+    height: 20rem;
+    width: 80%;
+    margin: auto;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+.img img {
+    height: 15rem;
+    width: 100%;
+}
+
+.text_description {
+    padding: 1rem;
+
+    background-color: var(--textBgColor);
+    color: var(--textColor);
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.text_description img { 
+    width: 20px;
+    height: 20px;
+}
+
+

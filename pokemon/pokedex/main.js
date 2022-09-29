@@ -1,19 +1,20 @@
 let container = document.querySelector('.container')
-let linkAPIPokemon = 'https://pokeapi.co/api/v2/pokemon?limit=10'
+let linkAPIPokemon = 'https://pokeapi.co/api/v2/pokemon?limit=50'
 let renderArray = []
- const callApiPokemon = async (link) => {
+const callApiPokemon = async (link) => {
     const data = await fetch(link)
     return await data.json()
 }
 const renderTypePokemon = (arr) => {
     // console.log(arr)
-  return  arr.map((item, index) => {
+    return arr.map((item, index) => {
         return `<img class='${item.type.name} icon' src="../img/${item.type.name}.svg"/>`
     })
 }
 const createRenderCard = (arr) => {
     container.innerHTML = ''
     arr?.map((item, index) => {
+        
         container.innerHTML += ` 
         <div class="card">
         <div class="img">
@@ -25,13 +26,16 @@ const createRenderCard = (arr) => {
         </div>
       </div>`
     })
-}
 
+}
+// get all type of pokemon
 callApiPokemon(linkAPIPokemon).then(res => {
 
     renderArray = [...res.results]
 
 }).then(async () => {
+    // after have each pokemon url link ==> we can call it get all information each pokemon
+    // use async await for each arr ==> each item must have all information ==> before it can start render new card
     for (i = 0; i < renderArray.length; i++) {
         await callApiPokemon(renderArray[i].url).then(res => {
             renderArray[i].type = res

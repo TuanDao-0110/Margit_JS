@@ -22,7 +22,7 @@ const renderSpicesBtn = async () => {
 
     // console.log(spiecesArr)
     spiecesArrBtns.map((item, index) => {
-        spieces.innerHTML += `<li><button id=${item.name} link=${item.url} class=${item.name}>${item.name}</button></li>`
+        spieces.innerHTML += `<li><button class="button-19" role="button" id=${item.name} link=${item.url}>${item.name}</button></li>`
     })
 }
 

@@ -3,7 +3,7 @@ let spieces = document.querySelector('.spieces')
 let inputSearch = document.querySelector('#search')
 let container = document.querySelector('.container')
 let pokeMonNumber = 0
-let limitPokemon = 10
+let limitPokemon = 20
 let linkAPIPokemon = `https://pokeapi.co/api/v2/pokemon?limit=${limitPokemon}&offset=${pokeMonNumber}`
 let renderArray = []
 const callApiPokemon = async (link) => {
@@ -74,12 +74,12 @@ renderPokemonCard(`${linkAPIPokemon}${pokeMonNumber}`)
 // render gen button 
 const renderSpicesBtn = () => {
     spieces.innerHTML = ''
-    for (i = 1; i < 10; i++) {
+    for (i = 0; i < 10; i++) {
 
         spieces.innerHTML += `<li>
         
         <button type="radio" 
-       id="${i}" class="button-19" name="${i}" onclick="renderNewPokemon(${i},2)"
+       id="${i}" class="button-19" name="${i}" onclick="renderNewPokemon(${i},1)"
          >gen ${i}</button>
         </li>`
 
@@ -97,7 +97,10 @@ const renderNewPokemon = (id, limit) => {
 const searchPokemon = (name) => {
     let tempArr = []
     for (i of renderArray) {
-        if (i.name.slice(0, name.length).toLowerCase() === name.toLowerCase()) {
+        // if (i.name.slice(0, name.length).toLowerCase() === name.toLowerCase()) {
+        //     tempArr.push(i)
+        // }
+        if ( i.name.toLowerCase().includes(name.trim().toLowerCase())){
             tempArr.push(i)
         }
     }

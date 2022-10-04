@@ -103,7 +103,6 @@ width: 100%; */
 
 .text_description {
     padding: 1rem;
-
     background-color: var(--textBgColor);
     color: var(--textColor);
     font-size: 2rem;
@@ -120,7 +119,6 @@ width: 100%; */
 
 /* CSS */
 .button-19 {
-    appearance: button;
     background-color: #1899d6;
     border: solid transparent;
     border-radius: 16px;
@@ -165,7 +163,7 @@ width: 100%; */
     z-index: -1;
 }
 
-.button-19:main,
+
 .button-19:focus {
     user-select: auto;
 }

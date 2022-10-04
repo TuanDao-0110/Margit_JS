@@ -12,7 +12,6 @@ const callApiPokemon = async (link) => {
 }
 // render type pokemon ==> which will show the porperty of pokemon on read card. 
 const renderTypePokemon = (arr) => {
-    // console.log(arr)
     return arr.map((item, index) => {
         return `<img class='${item.type.name} icon' src="../img/${item.type.name}.svg"/>`
     })
@@ -96,20 +95,16 @@ const renderNewPokemon = (id, limit) => {
 }
 // search for each pokemon when we type
 const searchPokemon = (name) => {
-    console.log(name.length)
     let tempArr = []
     for (i of renderArray) {
-        console.log(i.name.slice(0, name.length))
         if (i.name.slice(0, name.length).toLowerCase() === name.toLowerCase()) {
             tempArr.push(i)
         }
     }
     if (name.length === 0) {
-
         createRenderCard(renderArray)
     } else {
 
-        console.log('render new card' + tempArr)
         createRenderCard(tempArr)
     }
 }

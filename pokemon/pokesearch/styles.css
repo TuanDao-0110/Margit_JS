@@ -90,10 +90,10 @@ width: 100%; */
 
 @keyframes shake {
     0% {
-        transform: translateX(5px);
+        transform: translateX(2px);
     }
     100% {
-        transform: translateX(-10px);
+        transform: translateX(-4px);
     }
 }
 .img img {

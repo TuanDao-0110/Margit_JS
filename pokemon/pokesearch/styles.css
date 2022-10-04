@@ -1,31 +1,28 @@
-
-
 /* header  */
-.header { 
+.header {
     display: flex;
-width: 80%;
-margin: auto;
+    width: 80%;
+    margin: auto;
 
-gap: 1rem;
-flex-wrap: wrap;
-
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
-.header .left { 
-width: 100%;
+.header .left {
+    width: 100%;
 }
-.header .left input { 
+.header .left input {
     padding: 0.6rem 0.4rem;
     font-size: 2rem;
     border-radius: 10px;
     width: 100%;
 }
 
-.header .right { 
+.header .right {
     width: 100%;
 }
 
-.header .right ul { 
+.header .right ul {
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
@@ -34,31 +31,31 @@ width: 100%;
     height: 100%;
     align-items: center;
 }
-.header .right ul li { 
+.header .right ul li {
     width: 20%;
 }
-.header .right ul li button { 
+.header .right ul li button {
     /* padding:  0.4rem 1rem;
 background-color: brown;
 border-radius: 10px; */
-/* font-size: 1rem; */
-/* text-align: center;
+    /* font-size: 1rem; */
+    /* text-align: center;
 color: #fff;
 width: 100%; */
 }
 
-.header .right ul li button:focus { 
+.header .right ul li button:focus {
     /* padding: 0.3rem 1.9rem; */
 }
 
-
 /* main */
-.main { 
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
     width: 100%;
     margin-top: 4rem;
 }
-
-
 
 /* card */
 .card {
@@ -75,6 +72,7 @@ width: 100%; */
 .img:hover {
     -webkit-filter: grayscale(0%);
     filter: grayscale(0%);
+    animation: shake 100ms infinite;
 }
 
 .img {
@@ -88,6 +86,15 @@ width: 100%; */
     justify-content: center;
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(5px);
+    }
+    100% {
+        transform: translateX(-10px);
+    }
 }
 .img img {
     height: 15rem;
@@ -104,7 +111,7 @@ width: 100%; */
     justify-content: space-between;
 }
 
-.text_description img { 
+.text_description img {
     width: 20px;
     height: 20px;
 }
@@ -113,61 +120,61 @@ width: 100%; */
 
 /* CSS */
 .button-19 {
-  appearance: button;
-  background-color: #1899D6;
-  border: solid transparent;
-  border-radius: 16px;
-  border-width: 0 0 4px;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  cursor: pointer;
-  display: inline-block;
-  font-family: din-round,sans-serif;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: .8px;
-  line-height: 20px;
-  margin: 0;
-  outline: none;
-  overflow: visible;
-  padding: 13px 16px;
-  text-align: center;
-  text-transform: uppercase;
-  touch-action: manipulation;
-  transform: translateZ(0);
-  transition: filter .2s;
-  user-select: none;
-  -webkit-user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  width: 100%;
+    appearance: button;
+    background-color: #1899d6;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: din-round, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    line-height: 20px;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 13px 16px;
+    text-align: center;
+    text-transform: uppercase;
+    touch-action: manipulation;
+    transform: translateZ(0);
+    transition: filter 0.2s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 100%;
 }
 
 .button-19:after {
-  background-clip: padding-box;
-  background-color: #1CB0F6;
-  border: solid transparent;
-  border-radius: 16px;
-  border-width: 0 0 4px;
-  bottom: -4px;
-  content: "";
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: -1;
+    background-clip: padding-box;
+    background-color: #1cb0f6;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    bottom: -4px;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
 }
 
 .button-19:main,
 .button-19:focus {
-  user-select: auto;
+    user-select: auto;
 }
 
 .button-19:hover:not(:disabled) {
-  filter: brightness(1.1);
-  -webkit-filter: brightness(1.1);
+    filter: brightness(1.1);
+    -webkit-filter: brightness(1.1);
 }
 
 .button-19:disabled {
-  cursor: auto;
+    cursor: auto;
 }
